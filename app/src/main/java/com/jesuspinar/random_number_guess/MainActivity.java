@@ -63,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
     private void checkWin(int numPicked) {
         if(numPicked == num2guess && numAttemps >= END_ATTEMPS ){
             Toast.makeText(this,"You win !!", Toast.LENGTH_LONG).show();
-            //TODO: exit
+            finishAffinity();
         }
         else if(numAttemps <= END_ATTEMPS){
             Toast.makeText(this,"You lose !!", Toast.LENGTH_LONG).show();
-            //TODO: exit
+            finishAffinity();
         }
         else{
             numAttemps--;
