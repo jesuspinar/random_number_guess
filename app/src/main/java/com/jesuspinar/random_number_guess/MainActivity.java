@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     private final static int MAX_NUM = 9;
 
     private TextView txt_numAttemps;
+    private int numAttemps;
+
     private TextView txt_pickedNum;
 
     private int num2guess;
@@ -23,19 +25,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //Init attemps
         num2guess = getRandom(MIN_NUM,MAX_NUM);
-        txt_numAttemps = findViewById(R.id.txtNumAttemps);
-        txt_numAttemps.setText(START_ATTEMPS +"");
 
+        txt_numAttemps = findViewById(R.id.txtNumAttemps);
         txt_pickedNum = findViewById(R.id.txtPickedNum);
+
+        numAttemps = START_ATTEMPS;
+        txt_numAttemps.setText(START_ATTEMPS+"");
 
         initButtonsListeners();
     }
-
-
-
 
     private void initButtonsListeners() {
         Button button0 = findViewById(R.id.button0);
@@ -49,35 +48,31 @@ public class MainActivity extends AppCompatActivity {
         Button button8 = findViewById(R.id.button8);
         Button button9 = findViewById(R.id.button9);
 
-        button0.setOnClickListener(view ->  txt_pickedNum.setText("0"));
-        button1.setOnClickListener(view ->  txt_pickedNum.setText("1"));
-        button2.setOnClickListener(view ->  txt_pickedNum.setText("2"));
-        button3.setOnClickListener(view ->  txt_pickedNum.setText("3"));
-        button4.setOnClickListener(view ->  txt_pickedNum.setText("4"));
-        button5.setOnClickListener(view ->  txt_pickedNum.setText("5"));
-        button6.setOnClickListener(view ->  txt_pickedNum.setText("6"));
-        button7.setOnClickListener(view ->  txt_pickedNum.setText("7"));
-        button8.setOnClickListener(view ->  txt_pickedNum.setText("8"));
-        button9.setOnClickListener(view ->  txt_pickedNum.setText("9"));
-
-
-        ///////////////////////
-//        checkWin(Integer.parseInt(txt_pickedNum.getText().toString()));
+        button0.setOnClickListener(view -> {txt_pickedNum.setText("0");checkWin(0);});
+        button1.setOnClickListener(view -> {txt_pickedNum.setText("1");checkWin(1);});
+        button2.setOnClickListener(view -> {txt_pickedNum.setText("2");checkWin(2);});
+        button3.setOnClickListener(view -> {txt_pickedNum.setText("3");checkWin(3);});
+        button4.setOnClickListener(view -> {txt_pickedNum.setText("4");checkWin(4);});
+        button5.setOnClickListener(view -> {txt_pickedNum.setText("5");checkWin(5);});
+        button6.setOnClickListener(view -> {txt_pickedNum.setText("6");checkWin(6);});
+        button7.setOnClickListener(view -> {txt_pickedNum.setText("7");checkWin(7);});
+        button8.setOnClickListener(view -> {txt_pickedNum.setText("8");checkWin(8);});
+        button9.setOnClickListener(view -> {txt_pickedNum.setText("9");checkWin(9);});
     }
 
     private void checkWin(int numPicked) {
-        int numAttemps = Integer.parseInt(txt_numAttemps.getText().toString());
-
         if(numPicked == num2guess && numAttemps >= END_ATTEMPS ){
             Toast.makeText(this,"You win !!", Toast.LENGTH_LONG).show();
-            onDestroy();
+            //TODO: exit
         }
         else if(numAttemps <= END_ATTEMPS){
             Toast.makeText(this,"You lose !!", Toast.LENGTH_LONG).show();
-            onDestroy();
+            //TODO: exit
         }
         else{
-            txt_numAttemps.setText(Integer.parseInt(txt_pickedNum.getText().toString()) - 1);
+            numAttemps--;
+            txt_numAttemps.setText(numAttemps+"");
+            Toast.makeText(this,"Try again", Toast.LENGTH_SHORT).show();
         }
     }
 
