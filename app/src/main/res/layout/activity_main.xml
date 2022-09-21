@@ -26,7 +26,7 @@
             android:layout_marginStart="103dp"
             android:layout_marginTop="92dp"
             android:layout_marginEnd="103dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="24dp"
             android:text="@string/txt_pick_numb"
             app:layout_constraintBottom_toTopOf="@+id/txtPickedNum"
             app:layout_constraintEnd_toEndOf="parent"
@@ -38,42 +38,44 @@
             android:id="@+id/txtAttemps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="47dp"
-            android:layout_marginBottom="94dp"
+            android:layout_marginStart="112dp"
+            android:layout_marginTop="44dp"
             android:text="@string/txt_num_attemps"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/txtNumAttemps"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/txtExplanation"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.136" />
 
         <TextView
             android:id="@+id/txtNumAttemps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="46dp"
-            android:layout_marginEnd="230dp"
             android:layout_marginBottom="8dp"
             android:text="0"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/txtExplanation"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.068"
             app:layout_constraintStart_toEndOf="@+id/txtAttemps"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.05" />
+            app:layout_constraintVertical_bias="0.083" />
 
         <TextView
             android:id="@+id/txtPickedNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="166dp"
-            android:layout_marginTop="16dp"
             android:layout_marginEnd="167dp"
             android:layout_marginBottom="24dp"
             android:text="0"
+            android:textColor="#2196F3"
+            android:textColorHighlight="@color/black"
+            android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.545"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtExplanation" />
     </android.support.constraint.ConstraintLayout>
@@ -104,8 +106,9 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="9"
-                tools:text="9"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="9" />
 
             <Button
                 android:id="@+id/button8"
@@ -115,9 +118,9 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="8"
-                tools:text="8"
                 android:textColor="@color/white"
-                 />
+                android:textSize="20sp"
+                tools:text="8" />
 
             <Button
                 android:id="@+id/button7"
@@ -127,8 +130,9 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="7"
-                tools:text="7"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="7" />
         </TableRow>
 
         <TableRow
@@ -143,8 +147,9 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="6"
-                tools:text="6"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="6" />
 
             <Button
                 android:id="@+id/button5"
@@ -154,8 +159,9 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="5"
-                tools:text="5"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="5" />
 
             <Button
                 android:id="@+id/button4"
@@ -165,8 +171,9 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="4"
-                tools:text="4"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="4" />
         </TableRow>
 
         <TableRow
@@ -181,8 +188,9 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="3"
-                tools:text="3"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="3" />
 
             <Button
                 android:id="@+id/button2"
@@ -192,8 +200,9 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="2"
-                tools:text="2"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="2" />
 
             <Button
                 android:id="@+id/button1"
@@ -203,8 +212,9 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="1"
-                tools:text="1"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="1" />
         </TableRow>
 
         <TableRow
@@ -225,8 +235,9 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="0"
-                tools:text="0"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="0" />
 
             <TableRow
                 android:layout_width="80dp"
