@@ -17,17 +17,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView txt_numAttemps;
     private TextView txt_pickedNum;
 
-    private Button button0;
-    private Button button1;
-    private Button button2;
-    private Button button3;
-    private Button button4;
-    private Button button5;
-    private Button button6;
-    private Button button7;
-    private Button button8;
-    private Button button9;
-
     private int num2guess;
 
     @Override
@@ -37,12 +26,28 @@ public class MainActivity extends AppCompatActivity {
 
         //Init attemps
         num2guess = getRandom(MIN_NUM,MAX_NUM);
-        txt_numAttemps = findViewById(R.id.txt_numAttemps);
-        txt_numAttemps.setText(START_ATTEMPS);
+        txt_numAttemps = findViewById(R.id.txtNumAttemps);
+        txt_numAttemps.setText(num2guess +"");
+
+        txt_pickedNum = findViewById(R.id.txtPickedNum);
 
         initButtonsListeners();
     }
+
+
+
+
     private void initButtonsListeners() {
+        Button button0;
+        Button button1;
+        Button button2;
+        Button button3;
+        Button button4;
+        Button button5;
+        Button button6;
+        Button button7;
+        Button button8;
+        Button button9;
 
         button0 = findViewById(R.id.button0);
         button1 = findViewById(R.id.button1);
@@ -55,24 +60,24 @@ public class MainActivity extends AppCompatActivity {
         button8 = findViewById(R.id.button8);
         button9 = findViewById(R.id.button9);
 
-        button0.setOnClickListener(view ->  txt_pickedNum.setText(button0.getText()));
-        button1.setOnClickListener(view ->  txt_pickedNum.setText(button1.getText()));
-        button2.setOnClickListener(view ->  txt_pickedNum.setText(button2.getText()));
-        button3.setOnClickListener(view ->  txt_pickedNum.setText(button3.getText()));
-        button4.setOnClickListener(view ->  txt_pickedNum.setText(button4.getText()));
-        button5.setOnClickListener(view ->  txt_pickedNum.setText(button5.getText()));
-        button6.setOnClickListener(view ->  txt_pickedNum.setText(button6.getText()));
-        button7.setOnClickListener(view ->  txt_pickedNum.setText(button7.getText()));
-        button8.setOnClickListener(view ->  txt_pickedNum.setText(button8.getText()));
-        button9.setOnClickListener(view ->  txt_pickedNum.setText(button9.getText()));
+        button0.setOnClickListener(view ->  txt_pickedNum.setText("0"));
+        button1.setOnClickListener(view ->  txt_pickedNum.setText("1"));
+        button2.setOnClickListener(view ->  txt_pickedNum.setText("2"));
+        button3.setOnClickListener(view ->  txt_pickedNum.setText("3"));
+        button4.setOnClickListener(view ->  txt_pickedNum.setText("4"));
+        button5.setOnClickListener(view ->  txt_pickedNum.setText("5"));
+        button6.setOnClickListener(view ->  txt_pickedNum.setText("6"));
+        button7.setOnClickListener(view ->  txt_pickedNum.setText("7"));
+        button8.setOnClickListener(view ->  txt_pickedNum.setText("8"));
+        button9.setOnClickListener(view ->  txt_pickedNum.setText("9"));
 
 
         ///////////////////////
-        checkWin(Integer.parseInt((String) txt_pickedNum.getText()));
+//        checkWin(Integer.parseInt(txt_pickedNum.getText().toString()));
     }
 
     private void checkWin(int numPicked) {
-        int numAttemps = Integer.parseInt((String) txt_numAttemps.getText());
+        int numAttemps = Integer.parseInt(txt_numAttemps.getText().toString());
 
         if(numPicked == num2guess && numAttemps >= END_ATTEMPS ){
             Toast.makeText(this,"You win !!", Toast.LENGTH_LONG).show();
@@ -83,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             onDestroy();
         }
         else{
-            txt_numAttemps.setText(Integer.parseInt((String) txt_pickedNum.getText()) - 1);
+            txt_numAttemps.setText(Integer.parseInt(txt_pickedNum.getText().toString()) - 1);
         }
     }
 
@@ -91,4 +96,5 @@ public class MainActivity extends AppCompatActivity {
         Random r = new Random();
         return r.nextInt(max-min+1)+min;
     }
+
 }
