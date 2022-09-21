@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/txt_explanation"
+            android:id="@+id/txtExplanation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="103dp"
@@ -28,14 +28,14 @@
             android:layout_marginEnd="103dp"
             android:layout_marginBottom="30dp"
             android:text="@string/txt_pick_numb"
-            app:layout_constraintBottom_toTopOf="@+id/txt_pickedNum"
+            app:layout_constraintBottom_toTopOf="@+id/txtPickedNum"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/txt_attemps"
+            android:id="@+id/txtAttemps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -43,39 +43,39 @@
             android:layout_marginBottom="94dp"
             android:text="@string/txt_num_attemps"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/txt_numAttemps"
+            app:layout_constraintEnd_toStartOf="@+id/txtNumAttemps"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/txt_numAttemps"
+            android:id="@+id/txtNumAttemps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="46dp"
             android:layout_marginEnd="230dp"
             android:layout_marginBottom="8dp"
             android:text="0"
-            app:layout_constraintBottom_toTopOf="@+id/txt_explanation"
+            app:layout_constraintBottom_toTopOf="@+id/txtExplanation"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/txt_attemps"
+            app:layout_constraintStart_toEndOf="@+id/txtAttemps"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.05" />
 
         <TextView
-            android:id="@+id/txt_pickedNum"
+            android:id="@+id/txtPickedNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="166dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="167dp"
             android:layout_marginBottom="24dp"
-            android:text="...."
+            android:text="0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_explanation" />
+            app:layout_constraintTop_toBottomOf="@+id/txtExplanation" />
     </android.support.constraint.ConstraintLayout>
 
     <TableLayout
@@ -104,6 +104,7 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="9"
+                tools:text="9"
                 android:textColor="@color/white" />
 
             <Button
@@ -114,7 +115,9 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="8"
-                android:textColor="@color/white" />
+                tools:text="8"
+                android:textColor="@color/white"
+                 />
 
             <Button
                 android:id="@+id/button7"
@@ -124,6 +127,7 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="7"
+                tools:text="7"
                 android:textColor="@color/white" />
         </TableRow>
 
@@ -139,6 +143,7 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="6"
+                tools:text="6"
                 android:textColor="@color/white" />
 
             <Button
@@ -149,6 +154,7 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="5"
+                tools:text="5"
                 android:textColor="@color/white" />
 
             <Button
@@ -159,6 +165,7 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="4"
+                tools:text="4"
                 android:textColor="@color/white" />
         </TableRow>
 
@@ -174,6 +181,7 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="3"
+                tools:text="3"
                 android:textColor="@color/white" />
 
             <Button
@@ -184,6 +192,7 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="2"
+                tools:text="2"
                 android:textColor="@color/white" />
 
             <Button
@@ -194,6 +203,7 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="1"
+                tools:text="1"
                 android:textColor="@color/white" />
         </TableRow>
 
@@ -215,6 +225,7 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/blue_200"
                 android:text="0"
+                tools:text="0"
                 android:textColor="@color/white" />
 
             <TableRow

@@ -15,18 +15,9 @@ public class MainActivity extends AppCompatActivity {
     private final static int MAX_NUM = 9;
 
     private TextView txt_numAttemps;
-    private TextView txt_pickedNum;
+    private int numAttemps;
 
-    private Button button0;
-    private Button button1;
-    private Button button2;
-    private Button button3;
-    private Button button4;
-    private Button button5;
-    private Button button6;
-    private Button button7;
-    private Button button8;
-    private Button button9;
+    private TextView txt_pickedNum;
 
     private int num2guess;
 
@@ -34,56 +25,54 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //Init attemps
         num2guess = getRandom(MIN_NUM,MAX_NUM);
-        txt_numAttemps = findViewById(R.id.txt_numAttemps);
-        txt_numAttemps.setText(START_ATTEMPS);
+
+        txt_numAttemps = findViewById(R.id.txtNumAttemps);
+        txt_pickedNum = findViewById(R.id.txtPickedNum);
+
+        numAttemps = START_ATTEMPS;
+        txt_numAttemps.setText(START_ATTEMPS+"");
 
         initButtonsListeners();
     }
+
     private void initButtonsListeners() {
+        Button button0 = findViewById(R.id.button0);
+        Button button1 = findViewById(R.id.button1);
+        Button button2 = findViewById(R.id.button2);
+        Button button3 = findViewById(R.id.button3);
+        Button button4 = findViewById(R.id.button4);
+        Button button5 = findViewById(R.id.button5);
+        Button button6 = findViewById(R.id.button6);
+        Button button7 = findViewById(R.id.button7);
+        Button button8 = findViewById(R.id.button8);
+        Button button9 = findViewById(R.id.button9);
 
-        button0 = findViewById(R.id.button0);
-        button1 = findViewById(R.id.button1);
-        button2 = findViewById(R.id.button2);
-        button3 = findViewById(R.id.button3);
-        button4 = findViewById(R.id.button4);
-        button5 = findViewById(R.id.button5);
-        button6 = findViewById(R.id.button6);
-        button7 = findViewById(R.id.button7);
-        button8 = findViewById(R.id.button8);
-        button9 = findViewById(R.id.button9);
-
-        button0.setOnClickListener(view ->  txt_pickedNum.setText(button0.getText()));
-        button1.setOnClickListener(view ->  txt_pickedNum.setText(button1.getText()));
-        button2.setOnClickListener(view ->  txt_pickedNum.setText(button2.getText()));
-        button3.setOnClickListener(view ->  txt_pickedNum.setText(button3.getText()));
-        button4.setOnClickListener(view ->  txt_pickedNum.setText(button4.getText()));
-        button5.setOnClickListener(view ->  txt_pickedNum.setText(button5.getText()));
-        button6.setOnClickListener(view ->  txt_pickedNum.setText(button6.getText()));
-        button7.setOnClickListener(view ->  txt_pickedNum.setText(button7.getText()));
-        button8.setOnClickListener(view ->  txt_pickedNum.setText(button8.getText()));
-        button9.setOnClickListener(view ->  txt_pickedNum.setText(button9.getText()));
-
-
-        ///////////////////////
-        checkWin(Integer.parseInt((String) txt_pickedNum.getText()));
+        button0.setOnClickListener(view -> {txt_pickedNum.setText("0");checkWin(0);});
+        button1.setOnClickListener(view -> {txt_pickedNum.setText("1");checkWin(1);});
+        button2.setOnClickListener(view -> {txt_pickedNum.setText("2");checkWin(2);});
+        button3.setOnClickListener(view -> {txt_pickedNum.setText("3");checkWin(3);});
+        button4.setOnClickListener(view -> {txt_pickedNum.setText("4");checkWin(4);});
+        button5.setOnClickListener(view -> {txt_pickedNum.setText("5");checkWin(5);});
+        button6.setOnClickListener(view -> {txt_pickedNum.setText("6");checkWin(6);});
+        button7.setOnClickListener(view -> {txt_pickedNum.setText("7");checkWin(7);});
+        button8.setOnClickListener(view -> {txt_pickedNum.setText("8");checkWin(8);});
+        button9.setOnClickListener(view -> {txt_pickedNum.setText("9");checkWin(9);});
     }
 
     private void checkWin(int numPicked) {
-        int numAttemps = Integer.parseInt((String) txt_numAttemps.getText());
-
         if(numPicked == num2guess && numAttemps >= END_ATTEMPS ){
             Toast.makeText(this,"You win !!", Toast.LENGTH_LONG).show();
-            onDestroy();
+            finishAffinity();
         }
         else if(numAttemps <= END_ATTEMPS){
             Toast.makeText(this,"You lose !!", Toast.LENGTH_LONG).show();
-            onDestroy();
+            finishAffinity();
         }
         else{
-            txt_numAttemps.setText(Integer.parseInt((String) txt_pickedNum.getText()) - 1);
+            numAttemps--;
+            txt_numAttemps.setText(numAttemps+"");
+            Toast.makeText(this,"Try again", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -91,4 +80,5 @@ public class MainActivity extends AppCompatActivity {
         Random r = new Random();
         return r.nextInt(max-min+1)+min;
     }
+
 }

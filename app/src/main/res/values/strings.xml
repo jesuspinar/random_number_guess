@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Guess Random Number</string>
-    <string name="txt_num_attemps">Trys to go :</string>
+    <string name="txt_num_attemps">Tries to go :</string>
     <string name="txt_pick_numb">Choose a number 0 to 9</string>
 </resources>
