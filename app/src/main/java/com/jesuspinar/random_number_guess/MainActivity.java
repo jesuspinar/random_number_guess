@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         //Init attemps
         num2guess = getRandom(MIN_NUM,MAX_NUM);
         txt_numAttemps = findViewById(R.id.txtNumAttemps);
-        txt_numAttemps.setText(num2guess +"");
+        txt_numAttemps.setText(START_ATTEMPS +"");
 
         txt_pickedNum = findViewById(R.id.txtPickedNum);
 
@@ -38,27 +38,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initButtonsListeners() {
-        Button button0;
-        Button button1;
-        Button button2;
-        Button button3;
-        Button button4;
-        Button button5;
-        Button button6;
-        Button button7;
-        Button button8;
-        Button button9;
-
-        button0 = findViewById(R.id.button0);
-        button1 = findViewById(R.id.button1);
-        button2 = findViewById(R.id.button2);
-        button3 = findViewById(R.id.button3);
-        button4 = findViewById(R.id.button4);
-        button5 = findViewById(R.id.button5);
-        button6 = findViewById(R.id.button6);
-        button7 = findViewById(R.id.button7);
-        button8 = findViewById(R.id.button8);
-        button9 = findViewById(R.id.button9);
+        Button button0 = findViewById(R.id.button0);
+        Button button1 = findViewById(R.id.button1);
+        Button button2 = findViewById(R.id.button2);
+        Button button3 = findViewById(R.id.button3);
+        Button button4 = findViewById(R.id.button4);
+        Button button5 = findViewById(R.id.button5);
+        Button button6 = findViewById(R.id.button6);
+        Button button7 = findViewById(R.id.button7);
+        Button button8 = findViewById(R.id.button8);
+        Button button9 = findViewById(R.id.button9);
 
         button0.setOnClickListener(view ->  txt_pickedNum.setText("0"));
         button1.setOnClickListener(view ->  txt_pickedNum.setText("1"));
